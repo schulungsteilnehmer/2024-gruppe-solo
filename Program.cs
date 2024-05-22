@@ -8,6 +8,7 @@
  */
 using System;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace msg_David_Sprint__Tag_1_
 {
@@ -218,6 +219,15 @@ namespace msg_David_Sprint__Tag_1_
 				Console.WriteLine();
 				Console.WriteLine("Der Schüler verzeichnet einen zu niedrigen Notendurchschnitt");
 			}
+			string[] lines = { "First line","Second line"};
+			string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+			using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,"WriteLines.txt")))
+			{
+				foreach (string line in lines)
+					outputFile.WriteLine(line);
+			}
+			
+			
 			}
 		}
 	}

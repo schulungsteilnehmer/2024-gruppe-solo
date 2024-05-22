@@ -1,0 +1,6 @@
+C:\Users\Lenn\Documents\SharpDevelop Projects\msg David Sprint (Tag 1)\msg David Sprint (Tag 1)\bin\Debug\msg David Sprint (Tag 1).exe.config
+C:\Users\Lenn\Documents\SharpDevelop Projects\msg David Sprint (Tag 1)\msg David Sprint (Tag 1)\bin\Debug\msg David Sprint (Tag 1).exe
+C:\Users\Lenn\Documents\SharpDevelop Projects\msg David Sprint (Tag 1)\msg David Sprint (Tag 1)\bin\Debug\msg David Sprint (Tag 1).pdb
+C:\Users\Lenn\Documents\SharpDevelop Projects\msg David Sprint (Tag 1)\msg David Sprint (Tag 1)\obj\Debug\msg David Sprint (Tag 1).csprojResolveAssemblyReference.cache
+C:\Users\Lenn\Documents\SharpDevelop Projects\msg David Sprint (Tag 1)\msg David Sprint (Tag 1)\obj\Debug\msg David Sprint (Tag 1).exe
+C:\Users\Lenn\Documents\SharpDevelop Projects\msg David Sprint (Tag 1)\msg David Sprint (Tag 1)\obj\Debug\msg David Sprint (Tag 1).pdb

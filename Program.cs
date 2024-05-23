@@ -22,36 +22,23 @@ namespace msg_David_Sprint__Tag_1_
 			int AnzahlUnterkurse = 0;
 			// TODO: Implement Functionality Here
 			int Fach1, Fach2, Fach3, Fach4, Fach5, Fach6, Fach7, Fach8;
+			
 			Double Notendurchschnitt;
 			String Name;
-			String Datum;
+			DateTime Datum = DateTime.Now;
 			int Fehltage;
 			int unentschuldigteFehltage;
 			
-			Console.Write("Name des Schülers: ");
-			bool correctinput = true;
-			
-			do
-			{
-				if (!correctinput)
-				{
-				Console.Write("Ungültiger Name!");
-				}
-				Name = Console.ReadLine();
-				correctinput = Regex.IsMatch(Name, @"^[a-zA-Z\s-]+$");
+			while (true)
+            {
+                Console.Write("Name des Schülers: ");
+                Name = Console.ReadLine();
+                if (Regex.IsMatch(Name, @"^[a-zA-Z\s-]+$"))
+                {
+                    break;
+                }
+                Console.WriteLine("Ungültiger Name! Der Name darf nur Buchstaben, Leerzeichen und Bindestriche enthalten.");
 			}
-			while (correctinput);
-			
-			
-			
-			Console.Write("Datum (TT.MM.JJJJ): ");
-			Datum = Console.ReadLine();
-			if (!Regex.IsMatch(Datum, @"^\d{1,2}\.\d{1,2}\.\d{4}$")) 
-			{
-				Console.Write("Ungültiges Datum!");
-				Console.ReadKey();
-			}
-			
 			Console.WriteLine();
 			Console.Write("Fehltage: ");
 			Fehltage = Convert.ToInt32(Console.ReadLine());
@@ -83,7 +70,6 @@ namespace msg_David_Sprint__Tag_1_
 				Console.ReadKey(true);
 				return;
 			}
-			
 			else
 			{
 			Console.WriteLine(Gleichzeichen);
@@ -242,7 +228,7 @@ namespace msg_David_Sprint__Tag_1_
 			Console.WriteLine();
 			if (antwort == "Ja")
 			{
-				string fileName = "Zeugnis" + Name + ".txt";
+				string fileName = Name.Replace(" ", "_").Replace("-", "_") + "_Zeugnis.txt";
                 string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
                 FileStream Textdatei = File.Create(filePath);
                 Textdatei.Close();

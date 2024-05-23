@@ -1,0 +1,35 @@
+12.02.2024
+David-Gymnasium
+
+
+Fehltage: 0
+Davon unentschuldigt: 0
+
+Naturwissenschaften:
+
+Informatiknote: 12
+
+Mathematiknote: 12
+
+Sprachen:
+
+Deutschnote: 11
+
+Englischnote: 12
+
+Gesellschaftlich: 
+
+Geschichtsnote: 12
+
+Politiknote: 12
+
+Musisch-Künstlerisch:
+
+Kunstnote: 13
+
+Sport:
+
+Sportnote: 12
+
+Der Schüler wird versetzt.
+Der Notendurschnitt beträgt: 12

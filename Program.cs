@@ -18,6 +18,7 @@ namespace msg_David_Sprint__Tag_1_
 		{
 			Console.WriteLine("Guten Tag!");
 			int i = 0;
+			String Gleichzeichen = "==========================";
 			int AnzahlUnterkurse = 0;
 			// TODO: Implement Functionality Here
 			int Fach1, Fach2, Fach3, Fach4, Fach5, Fach6, Fach7, Fach8;
@@ -26,20 +27,31 @@ namespace msg_David_Sprint__Tag_1_
 			String Datum;
 			int Fehltage;
 			int unentschuldigteFehltage;
+			
 			Console.Write("Name des Schülers: ");
-			Name = Console.ReadLine();
-			if (!Regex.IsMatch(Name, @"^[a-zA-Z]")) 
+			bool correctinput = true;
+			
+			do
 			{
+				if (!correctinput)
+				{
 				Console.Write("Ungültiger Name!");
-				Console.ReadKey(true);
+				}
+				Name = Console.ReadLine();
+				correctinput = Regex.IsMatch(Name, @"^[a-zA-Z\s-]+$");
 			}
-			Console.Write("Datum: ");
+			while (correctinput);
+			
+			
+			
+			Console.Write("Datum (TT.MM.JJJJ): ");
 			Datum = Console.ReadLine();
-			if (!Regex.IsMatch(Datum, @"^[1-2024,.,,]")) 
+			if (!Regex.IsMatch(Datum, @"^\d{1,2}\.\d{1,2}\.\d{4}$")) 
 			{
 				Console.Write("Ungültiges Datum!");
-				Console.ReadKey(true);
+				Console.ReadKey();
 			}
+			
 			Console.WriteLine();
 			Console.Write("Fehltage: ");
 			Fehltage = Convert.ToInt32(Console.ReadLine());
@@ -65,58 +77,22 @@ namespace msg_David_Sprint__Tag_1_
 			Notendurchschnitt = Convert.ToDouble((Fach1 *2 + Fach2 *2 + Fach3+Fach4+Fach5+Fach6+Fach7+Fach8)/10);
 			Math.Round(Notendurchschnitt,1);
 			
-			if (Notendurchschnitt > 15)
+			if (Notendurchschnitt > 15 || Fach1 > 15 || Fach2 > 15 || Fach3 > 15 || Fach4 > 15 || Fach5 > 15 || Fach6 > 15 || Fach7 > 15 || Fach8 > 15)
 			{
 				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
 				Console.ReadKey(true);
+				return;
 			}
-			if (Fach1 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
-			if (Fach2 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
-			if (Fach3 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
-			if (Fach4 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
-			if (Fach5 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
-			if (Fach6 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
-			if (Fach7 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
-			if (Fach8 > 15)
-			{
-				Console.Write("Error. Noteneingabe ist nicht Korrekt.");
-				Console.ReadKey(true);
-			}
+			
 			else
 			{
-			Console.WriteLine();
+			Console.WriteLine(Gleichzeichen);
+			Console.WriteLine("Zeugnis:");
 			Console.WriteLine();
 			Console.WriteLine(Datum);
 			Console.WriteLine("David-Gymnasium");
 			Console.WriteLine(Convert.ToString(Name));
+			Console.WriteLine(Gleichzeichen);
 			Console.WriteLine();
 			
 			Console.Write("Fehltage: ");
@@ -124,46 +100,71 @@ namespace msg_David_Sprint__Tag_1_
 			Console.Write("Davon unentschuldigt: ");
 			Console.WriteLine(unentschuldigteFehltage);
 			Console.WriteLine();
+			Console.WriteLine(Gleichzeichen);
+			Console.WriteLine();
 			Console.WriteLine();
 			
 			Console.WriteLine("Naturwissenschaften:");
 			Console.WriteLine();
-			Console.Write("Informatiknote: ");
+			Console.Write("Infornote	:	");
 			Console.WriteLine(Fach1);
 			Console.WriteLine();
-			Console.Write("Mathematiknote: ");
+			Console.Write("Mathenote	:	");
 			Console.WriteLine(Fach2);
 			Console.WriteLine();
 			Console.WriteLine();
 			Console.WriteLine("Sprachen:");
 			Console.WriteLine();
-			Console.Write("Deutschnote: ");
+			Console.Write("Deutschnote	:	");
 			Console.WriteLine(Fach5);
 			Console.WriteLine();
-			Console.Write("Englischnote: ");
+			Console.Write("Englischnote	:	");
 			Console.WriteLine(Fach3);
 			Console.WriteLine();
 			Console.WriteLine();
 			Console.WriteLine("Gesellschaftlich:");
 			Console.WriteLine();
-			Console.Write("Geschichtsnote: ");
+			Console.Write("Geschichtsnote	:	");
 			Console.WriteLine(Fach6);
 			Console.WriteLine();
-			Console.Write("Politiknote: ");
+			Console.Write("Politiknote	:	");
 			Console.WriteLine(Fach4);
 			Console.WriteLine();
 			Console.WriteLine();
 			Console.WriteLine("Musisch-Künstlerisch:");
 			Console.WriteLine();
-			Console.Write("Kunstnote: ");
+			Console.Write("Kunstnote	:	");
 			Console.WriteLine(Fach7);
 			Console.WriteLine();
 			Console.WriteLine();
 			Console.WriteLine("Sport:");
 			Console.WriteLine();
-			Console.Write("Sportnote: ");
+			Console.Write("Sportnote	:	");
 			Console.WriteLine(Fach8);
 			Console.WriteLine();
+			Console.WriteLine();
+			Console.WriteLine(Gleichzeichen);
+			Console.WriteLine();
+			Console.WriteLine();
+			
+			string zeugnis = Datum + "\n" +
+                             "David-Gymnasium\n" +
+                             Name + "\n\n" +
+                             "Fehltage: " + Fehltage + "\n" +
+                             "Davon unentschuldigt: " + unentschuldigteFehltage + "\n\n" +
+                             "Naturwissenschaften:\n\n" +
+                             "Informatiknote: " + Fach1 + "\n\n" +
+                             "Mathematiknote: " + Fach2 + "\n\n" +
+                             "Sprachen:\n\n" +
+                             "Deutschnote: " + Fach5 + "\n\n" +
+                             "Englischnote: " + Fach3 + "\n\n" +
+                             "Gesellschaftlich: \n\n" +
+                             "Geschichtsnote: " + Fach6 + "\n\n" +
+                             "Politiknote: " + Fach4 + "\n\n" +
+                             "Musisch-Künstlerisch:\n\n" +
+                             "Kunstnote: " + Fach7 + "\n\n" +
+                             "Sport:\n\n" +
+                             "Sportnote: " + Fach8 + "\n\n";
 			
 			int [] UnterkursArray = new int[] {Fach1,Fach2,Fach3,Fach4,Fach5,Fach6,Fach7,Fach8};
 			int Vergleichszahl = 5;
@@ -186,6 +187,10 @@ namespace msg_David_Sprint__Tag_1_
 					Console.Write(Notendurchschnitt.ToString());
 					Console.WriteLine();
 					Console.WriteLine("Der Schüler verzeichnet zu viele unentschuldigte Fehltage.");
+					zeugnis += "Der Schüler wird nicht versetzt.\n" +
+                               "Der Notendurschnitt beträgt: " + Notendurchschnitt + "\n" +
+                               "Der Schüler verzeichnet zu viele unentschuldigte Fehltage.\n";
+					Console.WriteLine();
 					Console.ReadKey(true);
 				}
 				if (AnzahlUnterkurse > 2)
@@ -197,6 +202,10 @@ namespace msg_David_Sprint__Tag_1_
 					Console.Write(Notendurchschnitt.ToString());
 					Console.ReadLine();
 					Console.WriteLine("Der Schüler verzeichnet zu viele Unterkurse.");
+					zeugnis += "Der Schüler wird nicht versetzt.\n" +
+                               "Der Notendurschnitt beträgt: " + Notendurchschnitt + "\n" +
+                               "Der Schüler verzeichnet zu viele Unterkurse.\n";
+					Console.WriteLine();
 					Console.ReadKey(true);
 				}
 				else 
@@ -206,10 +215,14 @@ namespace msg_David_Sprint__Tag_1_
 					Console.ForegroundColor = ConsoleColor.Gray;
 					Console.Write("Der Notendurschnitt beträgt: ");
 					Console.Write(Notendurchschnitt.ToString());
+					Console.WriteLine();
+					zeugnis += "Der Schüler wird versetzt.\n" +
+                               "Der Notendurschnitt beträgt: " + Notendurchschnitt + "\n";
+					Console.WriteLine();
 					Console.ReadKey(true);
 				}
 			}	
-			if (Notendurchschnitt < 5)
+			else
 			{
 				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine("Der Schüler wird nicht versetzt.");
@@ -218,16 +231,29 @@ namespace msg_David_Sprint__Tag_1_
 				Console.Write(Notendurchschnitt.ToString());
 				Console.WriteLine();
 				Console.WriteLine("Der Schüler verzeichnet einen zu niedrigen Notendurchschnitt");
+				zeugnis += "Der Schüler wird nicht versetzt.\n" +
+                           "Der Notendurschnitt beträgt: " + Notendurchschnitt + "\n" +
+                           "Der Schüler verzeichnet einen zu niedrigen Notendurchschnitt\n";
+				Console.WriteLine();
+				Console.ReadKey(true);
 			}
-			string[] lines = { "First line","Second line"};
-			string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-			using (StreamWriter outputFile = new StreamWriter(Path.Combine(docPath,"WriteLines.txt")))
+			Console.WriteLine("Soll das Zeugnis als Textdatei ausgegeben werden? (Ja/Nein): ");
+			string antwort = Console.ReadLine();
+			Console.WriteLine();
+			if (antwort == "Ja")
 			{
-				foreach (string line in lines)
-					outputFile.WriteLine(line);
+				string fileName = "Zeugnis" + Name + ".txt";
+                string filePath = Path.Combine(Directory.GetCurrentDirectory(), fileName);
+                FileStream Textdatei = File.Create(filePath);
+                Textdatei.Close();
+                File.WriteAllText(filePath, zeugnis);
+                Console.WriteLine("Das Zeugnis wurde in der Datei " + filePath + " gespeichert.");
 			}
-			
-			
+			else
+            {
+                Console.WriteLine("Das Zeugnis wurde nicht gespeichert.");
+            }
+            Console.ReadKey(true);
 			}
 		}
 	}

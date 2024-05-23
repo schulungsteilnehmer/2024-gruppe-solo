@@ -1,0 +1,35 @@
+{Datum}
+David-Gymnasium
+{Name}
+
+Fehltage: {Fehltage}
+Davon unentschuldigt: {unentschuldigteFehltage}
+
+Naturwissenschaften:
+
+Informatiknote: {Fach1}
+
+Mathematiknote: {Fach2}
+
+Sprachen:
+
+Deutschnote: {Fach5}
+
+Englischnote: {Fach3}
+
+Gesellschaftlich:
+
+Geschichtsnote: {Fach6}
+
+Politiknote: {Fach4}
+
+Musisch-Künstlerisch:
+
+Kunstnote: {Fach7}
+
+Sport:
+
+Sportnote: {Fach8}
+
+Der Schüler wird versetzt.
+Der Notendurschnitt beträgt: {Notendurchschnitt}
